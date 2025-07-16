@@ -1,7 +1,8 @@
-# Import necessary libraries
-import os, shutil
+"""Simple wrapper around :mod:`file_sorter_cli` for backward compatibility."""
+from pathlib import Path
+from file_sorter_cli import sort_files
 
-# --------------------------------------------------------------------------------------------------------
-# Code
-path = os.getcwd()
-print(f"Path: {path}")
+if __name__ == "__main__":
+    target = Path.cwd() / "FilesForSorting"
+    print(f"Sorting files in {target}")
+    sort_files(target)
